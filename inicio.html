@@ -1,0 +1,166 @@
+HTML:
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Materiales de Construcción</title>
+    <link rel="stylesheet" href="inicio.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <header>
+        <img src="imagenLogoIS.png" alt="Logo de la Tienda" class="header-image">
+        <h1></h1>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </label>
+        <nav>
+            <ul class="nav-list" id="nav-list">
+                <li><a href="#home">Inicio <ion-icon name="home-outline"></ion-icon></a></li>
+                <li><a href="#notificaciones">Notificaciones <ion-icon name="notifications-circle-outline"></ion-icon></a></li>
+                <!-- Contenedor para el ícono del carrito y el panel del carrito -->
+                <li>
+                    <div class="cart-container">
+                        <a href="#carrito" id="cart-icon">Carrito <ion-icon name="cart-outline"></ion-icon> <span id="cart-count">0</span></a>
+                        <!-- Lista del carrito (inicialmente oculta) -->
+                        <div id="carrito" class="hidden">
+                            <h2>Carrito de Compras</h2>
+                            <ul id="cart-items"></ul>
+                            <p>Total: <span id="total-price">0.00</span> bs</p>
+                        </div>
+                    </div>
+                </li>        
+                <li><a href="login.html">Login <ion-icon name="person-circle-outline"></ion-icon></a></li>
+            </ul>
+        </nav>
+        
+        
+        <div class="search-container">
+            <input type="text" placeholder="Buscar productos..." class="search-input">
+            <button class="search-button">Buscar <ion-icon name="search-outline"></ion-icon></button>
+        </div>
+    </header>
+    
+    
+    <section id="home" class="hero-section">
+        <h2>Los Mejores Materiales para Tu Construcción</h2>
+        <p>Calidad garantizada a precios competitivos. ¡Compra ahora y recibe tu pedido en la puerta de tu casa!</p>
+        <a href="#products" class="btn">Ver Productos</a>
+    </section>
+    <!-- Menu de categorias-->
+    <aside class="menu-categoria">
+        <h2>Categorías</h2>
+        <ul class="category-list">
+            <li class="nombre-categoria">
+                Cemento
+                <ul class="subcategory-list">
+                    <li>Cemento Emisa</li>
+                    <li>Cemento Camba</li>
+                    <li>Cemento Coboce</li>
+                </ul>
+            </li>
+            <li class="nombre-categoria">
+                Arena
+                <ul class="subcategory-list">
+                    <li>Arena Lavada</li>
+                    <li>Arena de Rio</li>
+                </ul>
+            </li>
+            <li class="nombre-categoria">
+                Bloques
+                <ul class="subcategory-list">
+                    <li>Bloques de Cemento</li>
+                    <li>Bloques de Arcilla</li>
+                </ul>
+            </li>
+            <li class="nombre-categoria">
+                Varilla
+                <ul class="subcategory-list">
+                    <li>Varilla de Acero</li>
+                    <li>Varilla de Fibra</li>
+                </ul>
+            </li>
+        </ul>
+    </aside>
+    
+    <!-- Seccion de productos ofertados -->
+    <section id="products" class="product-grid">
+         <!-- <h2></h2> --> 
+        <div class="product-card" id="category1">
+            <img src="imagen1IS.jpg" alt="Cemento">
+            <h3>Cemento</h3>
+            <button>Mas informacion</button>
+            <p>Descripción: Cemento de alta calidad para tus proyectos.</p>
+            <p class="price">500 bs</p>
+            <button class="btn add-to-cart-btn" data-product="Cemento" data-price="500">Agregar al carrito</button>
+            <!--   <button>  <ion-icon name="logo-whatsapp"></ion-icon> </button>
+            <button><ion-icon name="arrow-redo-outline"></ion-icon></button> -->
+        </div>
+        <div class="product-card" id="category2">
+            <img src="imagen2IS.jpeg" alt="Ladrillos">
+            <h3>Ladrillos</h3>
+            <button>Mas informacion</button>
+            <p>Descripción: Ladrillos resistentes para construcción de muros.</p>
+            <p class="price">50 bs</p>
+            <button class="btn add-to-cart-btn" data-product="Ladrillos" data-price="50">Agregar al carrito</button>
+        </div>
+        <div class="product-card" id="category3">
+            <img src="imagen3IS.jpeg" alt="Arena">
+            <h3>Arena</h3>
+            <button>Mas informacion</button>
+            <p>Descripción: Arena de calidad para mezclar con cemento.</p>
+            <p class="price">300 bs</p>
+            <button class="btn add-to-cart-btn" data-product="Arena" data-price="300">Agregar al carrito</button>
+        </div>
+        <div class="product-card" id="category4">
+            <img src="imagen3IS.jpeg" alt="Gravilla">
+            <h3>Gravilla</h3>
+            <button>Mas informacion</button>
+            <p>Descripción: Gravilla ideal para bases y rellenos.</p>
+            <p class="price">400 bs</p>
+            <button class="btn add-to-cart-btn" data-product="Gravilla" data-price="400">Agregar al carrito</button>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <h2>Sobre Nosotros</h2>
+        <p>En nuestra tienda, nos dedicamos a ofrecer los mejores materiales de construcción para profesionales y particulares. Con más de 20 años de experiencia en el sector, garantizamos calidad y un excelente servicio al cliente.</p>
+        <p>Nos esforzamos por proporcionar los materiales que necesitas para tus proyectos, desde pequeñas renovaciones hasta grandes obras de construcción.</p>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Contacto</h2>
+        <form action="#" method="post">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Mensaje:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            
+            <button type="submit" class="btn">Enviar Mensaje</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Tienda de Materiales de Construcción. Todos los derechos reservados.</p>
+        <p>Síguenos en nuestras redes sociales:</p>
+        <p>
+            <a href="">Facebook</a> | 
+            <a href="#">Instagram</a> | 
+            <a href="#">Twitter</a>
+        </p>
+    </footer>
+    <script src="carrito.js"></script>
+</body>
+</html>
