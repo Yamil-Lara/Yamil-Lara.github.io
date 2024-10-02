@@ -1,0 +1,391 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /*background: linear-gradient(135deg, #6D83F2, #B667F1);*/
+    background: white;
+  }
+
+  /*BOTON SIN REGISTRO*/
+  .sinRegistro{
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    color: white;
+    background: #02735E;
+    height: 30px;
+    width: auto;
+    border-radius: 5px;
+    margin: none;
+    border: none;
+  }
+  .sinRegistro:hover{
+    background: #014040;
+  }
+  .sinRegistro:active{
+    background: orange;
+  }
+  
+  .container {
+    width: 800px;
+    height: 500px;
+    background:transparent;
+    display: flex;
+    border-radius: 10px;
+    background: transparent;
+   
+  }
+
+  /*SECCION IZQUIERDO*/
+  .left-section {
+    width: 50%;
+    height: 100%;
+   /* background: linear-gradient(135deg, #F271B6, #9D67F2);*/
+    background: #02735E;
+   /* border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: white;
+    border-radius: 10px;
+  }
+  .left-section:hover{
+    transition: all 1s;
+    width: 55%;
+  }
+  
+  .image {
+    width: 60%;
+    position: relative;
+    left: -45px;
+    top: -40px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    filter: drop-shadow(10px 10px 5px rgba(19, 20, 19, 0.3));
+           /*drop-shadow(5px 5px 5px rgba(0,0,0,0.2)),
+            drop-shadow(15px 15px 15px rgba(0,0,0,0.2));*/
+    transition:all 1s;
+    animation: rotar 5s linear infinite;
+  }
+  .image:hover{
+    height: 70%;
+    width: 80%;
+    border-radius: 50%;
+    position: relative;
+    left: -30%;
+    box-shadow:2px 2px 5px  #58595a;
+  }
+  
+  @keyframes rotar {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .texto{
+    position: absolute;
+    left: 23%;
+    bottom: 90px;
+    width: 250px;
+  }
+
+  .description {
+    text-align: center;
+    font-size: 16px;
+    position: absolute;
+    left: 5%;
+    bottom: 10%;
+  }
+
+  /*SECCION DERECHO*/
+  .right-section {
+    position: absolute;
+    right: 355px;
+    top:110px;
+    width: 30%;
+    height: 60%;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 5px 6px 10px black;
+    transition: all 1s;
+  }
+
+  .right-section:hover{
+    width: 31%;
+    height: 61%;
+  }
+
+  /*SECCION DE LOGIN FORMULARIO*/
+  .login-box {
+    color: #014040;
+    width: 100%;
+    height: 100%;
+   /* max: width 100px; ;/*max: width:320px*/
+    text-align: center;
+  }
+  
+  .login-box h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #333;
+  }
+  h2{
+    color: #014040;
+  }
+  
+  .input-box {
+    position: relative;
+    margin-bottom: 30px;
+  }
+  .input{
+    border: none;
+  }
+  .input:hover{
+    border: 1px solid  #02735E;
+  }
+  
+  .input-box input {
+    width: 100%;
+    padding: 10px;
+    background: #f0f0f0;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+  }
+  
+  .input-box label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color:#02735E;
+    pointer-events: none;
+    transition: 0.3s;
+    opacity: 0.5;
+  }
+  
+  .input-box input:focus ~ label,
+  .input-box input:valid ~ label {
+    top: -10px;
+    left: 10px;
+    color: #014040;
+    font-size: 12px;
+    opacity: 10;
+  }
+  
+  .btn {
+    width: 100%;
+    padding: 10px;
+    /*background: linear-gradient(135deg, #6D83F2, #B667F1);*/
+    background: #02735E;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition:  all 0.5s;
+  }
+  
+  .btn:hover {
+    /*background: linear-gradient(135deg, #5A74E3, #A454D8);*/
+    background: #014040;
+    box-shadow: 1px 1px 2px rgb(100, 95, 95);
+  }
+  .btn:active {
+    background: orange;
+    box-shadow: 2px 2px 2px black;
+    color: black;
+    transform: scale(0.98); 
+  }
+
+  ion-icon{
+    color:rgb(20, 19, 19);
+    position: absolute;
+    right: 100%;
+    padding: 5px;
+    height: 40px;
+    width: 25px;
+    
+  }
+  /*.olvidasteContraseña{
+    font-family: 'Arial', sans-serif;
+    color: #7e7b7b;
+  }*/
+
+  /*BOTON REGISTRATE*/
+  .register {
+    background: #02735E;
+    border-radius: 10px;
+    color: aliceblue;
+    width: 50%;
+    position: absolute;
+    left: 25%;
+    height: 30px;
+    padding: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 1s;
+
+  }
+  
+  .register:hover {
+    background: #014040;
+    height: 31px;
+    width: 51%;
+  }
+  
+  .register:active {
+    background: orange;
+    box-shadow: 2px 2px 2px black;
+    color: black;
+    transform: scale(0.98); 
+  }
+
+  ion-icon{
+    color: #02735E;
+  }
+
+  .olvidasteContraseña{
+    color:#03A678;
+  }
+  .google{
+    box-shadow: 2px 2px 2px #03A678 ;
+    width: 15px;
+    height: 15px;
+    color: #03A678;
+    position: absolute;
+    left: 81%;
+    bottom: 21%;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .google:hover{
+    color: orange;
+    width: 18px;
+    height: 18px;
+    filter: drop-shadow(1px 1px 5px rgb(39, 155, 106));
+  }
+
+
+  /*....................................................................*/
+/* Media Queries para adaptabilidad */
+
+/* Para TABLETS (pantallas entre 768px y 1024px) */
+@media (max-width: 1024px) {
+  .container {
+      width: 90%;
+      height: 70%;
+      background: transparent;
+  }
+
+  .left-section {
+      width: 50%;
+      height: 100%;
+      padding: 15px;
+  }
+
+  .image {
+      width: 50%;
+  }
+  .texto{
+    position: absolute;
+    left: 10%;
+    bottom: 20%;
+  }
+
+  .right-section {
+      width: 40%;
+      height: 55%;
+      position: absolute;
+      right: 20%;
+      margin-top: 35px;
+  }
+  .right-section:hover{
+    width: 46%;
+    height: 56%;
+  }
+  .google{
+    position: absolute;
+    top: 76%;
+  }
+}
+
+/*Para CElULARES*/
+@media (max-width: 768px) {
+  .container {
+      flex-direction: column;
+      width: 650px;
+      height: 450px;
+      position: absolute;
+      background:transparent;
+      font-size: 12px;
+  }
+
+  .left-section {
+      width: 60%;
+      height: 99%;
+      position: absolute;
+      left: 5%;
+      border-radius: 10px 0 0 10px;
+      
+  }
+  .right-section {
+      width: 50%;
+      height: 75%;
+      border-radius: 10px 10px 10px 10px;
+      right: 5%;
+      top: 25px;
+      padding: 10px;
+      box-shadow: 5px 5px 5px black;
+      transition: all 1s;
+  }
+  .right-section:hover{
+      width: 51%;
+      height: 76%;
+      border-radius: 10px 0 10px 10px;
+      right: 5%;
+      top: 25px;
+      padding: 10px;
+  }
+  .login-box{
+    width: 85%;
+    height: 100%;
+  }
+
+  .image {
+      width: 50%;
+      right: 95%;
+      top: 0;
+  }
+.texto{
+  position: absolute;
+  bottom: 2%;
+  left: 7%;
+}
+.description{
+  font-size: 12px;
+}
+  .btn {
+      font-size: 16px;
+  }
+}
