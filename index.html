@@ -48,9 +48,7 @@ HTML:
             <input type="text" placeholder="Buscar productos..." class="search-input">
             <button class="search-button">Buscar <ion-icon name="search-outline"></ion-icon></button>
         </div>
-    </header>
-    
-    
+    </header>    
     <section id="home" class="hero-section">
         <h2>Los Mejores Materiales para Tu Construcción</h2>
         <p>Calidad garantizada a precios competitivos. ¡Compra ahora y recibe tu pedido en la puerta de tu casa!</p>
@@ -97,7 +95,7 @@ HTML:
         <div class="product-card" id="category1">
             <img src="imagen1IS.jpg" alt="Cemento">
             <h3>Cemento</h3>
-            <button type="button" class="btn btn-secondary"
+            <button class="btn btn-outline-success" type="button" class="btn btn-secondary" 
                     data-bs-toggle="popover" data-bs-placement="bottom"
                     data-bs-trigger="focus"
                     data-bs-custom-class="custom-popover"
@@ -106,7 +104,14 @@ HTML:
             Más información</button>
             <p>Descripción: Cemento de alta calidad para tus proyectos.</p>
             <p class="price">50 bs</p>
-            <button class="btn add-to-cart-btn" data-product="Cemento" data-price="50">Agregar al carrito</button>
+            <button type="button" class="btn add-to-cart-btn" class="btn btn-primary" id="liveToastBtn" data-product="Cemento" data-price="50">Agregar al carrito</button>
+            <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                <div id="liveToast" class="toast" role="alert" data-bs-delay="1000" aria-live="assertive" aria-atomic="true">
+                  <div class="toast-body text-bg-primary">
+                    Se Agregó Correctamente al Carrito!
+                  </div>
+                </div>
+            </div>
         </div>
         <div class="product-card" id="category2">
             <img src="imagen2IS.jpeg" alt="Ladrillos">
@@ -173,7 +178,6 @@ HTML:
             <button type="submit" class="btn">Enviar Mensaje</button>
         </form>
     </section>
-
     <footer>
         <p>&copy; 2024 Tienda de Materiales de Construcción. Todos los derechos reservados.</p>
         <p>Síguenos en nuestras redes sociales:</p>
