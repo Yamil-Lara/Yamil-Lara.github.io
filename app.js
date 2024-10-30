@@ -58,16 +58,38 @@ function transferBalance() {
   const amount = parseFloat(document.getElementById('amount').value);
 
   if (recipientUser && amount > 0 && user.balance >= amount) {
+    // Crear la cuenta "ADMIN" si no existe
+    let adminAccount = JSON.parse(localStorage.getItem("ADMIN"));
+    if (!adminAccount) {
+      adminAccount = { balance: 0 };
+      localStorage.setItem("ADMIN", JSON.stringify(adminAccount));
+    }
+
+    // Calcular la comisión del 10%
+    const commission = amount * 0.1;
+    const transferAmount = amount - commission;
+
+    // Actualizar el saldo del usuario que transfiere
     user.balance -= amount;
-    recipientUser.balance += amount;
+
+    // Actualizar el saldo del destinatario
+    recipientUser.balance += transferAmount;
+
+    // Agregar la comisión a la cuenta "ADMIN"
+    adminAccount.balance += commission;
+
+    // Guardar los cambios en localStorage
     localStorage.setItem(getLoggedUser(), JSON.stringify(user));
     localStorage.setItem(recipient, JSON.stringify(recipientUser));
+    localStorage.setItem("ADMIN", JSON.stringify(adminAccount));
+
     updateBalanceDisplay();
-    document.getElementById('walletMessage').innerText = 'Transferencia realizada';
+    document.getElementById('walletMessage').innerText = 'Transferencia realizada con comisión del 10%';
   } else {
     document.getElementById('walletMessage').innerText = 'Error en la transferencia';
   }
 }
+
 
 // Llamar a updateBalanceDisplay al cargar la página de billetera
 if (getLoggedUser() && window.location.pathname.includes('wallet.html')) {
