@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
+}
+
+.calculator {
+  background: rgba(255,255,255,0.1);
+  padding: 2.5rem 3rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  max-width: 420px;
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  color: #e0e0e0;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+
+input[type="number"]:focus {
+  box-shadow: 0 0 8px #90caf9;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  background: #90caf9;
+  border: none;
+  padding: 0.7rem 1.8rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #334155;
+  flex: 1;
+  margin: 0 0.5rem;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+  background: #f48fb1;
+  color: #fff;
+}
+
+#result {
+  margin-top: 1.8rem;
+  background: rgba(255,255,255,0.2);
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  text-align: center;
+  font-weight: 600;
+  min-height: 2.2rem;
+}
