@@ -1,21 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registro e Inicio de Sesión</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Calculadora Comparación Relación Beneficio-Costo Modificado</title>
+  <link rel="stylesheet" href="estilos.css" />
 </head>
 <body>
-  <div class="container">
-    <h2>Bienvenido</h2>
-    <form id="authForm">
-      <input type="text" id="username" placeholder="Nombre de usuario" required>
-      <input type="password" id="password" placeholder="Contraseña" required>
-      <button type="submit">Iniciar Sesión / Registrarse</button>
+  <main class="calculator" role="main" aria-labelledby="calc-title">
+    <h1 id="calc-title">Calculadora RBMC</h1>
+
+    <form id="rbmc-form" novalidate>
+      <label for="beneficios">Beneficios Totales:</label>
+      <input type="number" id="beneficios" name="beneficios" placeholder="Ej. 100000" step="any" min="0" required />
+
+      <label for="costos">Costos Totales:</label>
+      <input type="number" id="costos" name="costos" placeholder="Ej. 50000" step="any" min="0" required />
+
+      <label for="ajusteBeneficios">Ajuste en Beneficios:</label>
+      <input type="number" id="ajusteBeneficios" name="ajusteBeneficios" placeholder="Ej. 10000 o -2000" step="any" value="0" />
+
+      <label for="ajusteCostos">Ajuste en Costos:</label>
+      <input type="number" id="ajusteCostos" name="ajusteCostos" placeholder="Ej. 5000 o -1500" step="any" value="0" />
+
+      <div class="buttons">
+        <button type="submit" id="btnCalcular">Calcular</button>
+        <button type="button" id="btnLimpiar">Limpiar</button>
+      </div>
     </form>
-    <div id="authMessage"></div>
-  </div>
-  <script src="app.js"></script>
+
+    <div id="result" aria-live="polite" aria-atomic="true"></div>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
