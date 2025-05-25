@@ -85,6 +85,22 @@ button:hover {
   min-height: 2.2rem;
 }
 
+.result-item {
+  margin-bottom: 0.5rem;
+}
+
+.result-highlight {
+  font-size: 1.4rem;
+  margin: 1rem 0;
+  color: #90caf9;
+}
+
+.result-interpretation {
+  font-weight: 700;
+  padding-top: 0.8rem;
+  border-top: 2px solid rgba(255,255,255,0.2);
+}
+
 /* Añadir media queries al final del archivo */
 @media (max-width: 480px) {
   .calculator {
