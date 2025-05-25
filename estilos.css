@@ -84,3 +84,30 @@ button:hover {
   font-weight: 600;
   min-height: 2.2rem;
 }
+
+/* Añadir media queries al final del archivo */
+@media (max-width: 480px) {
+  .calculator {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  input[type="number"] {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  #result {
+    font-size: 0.95rem;
+    padding: 0.8rem;
+  }
+}
