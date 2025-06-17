@@ -2,7 +2,7 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, #003770, #004e8c);
   margin: 0;
   padding: 0;
   display: flex;
@@ -13,7 +13,7 @@ body {
 }
 
 .calculator {
-  background: rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.15);
   padding: 2.5rem 3rem;
   border-radius: 15px;
   box-shadow: 0 8px 30px rgba(0,0,0,0.3);
@@ -47,7 +47,7 @@ input[type="number"] {
 }
 
 input[type="number"]:focus {
-  box-shadow: 0 0 8px #90caf9;
+  box-shadow: 0 0 8px #E30613;
 }
 
 .buttons {
@@ -56,21 +56,21 @@ input[type="number"]:focus {
 }
 
 button {
-  background: #90caf9;
+  background: #E30613;
+  color: #FFFFFF;
   border: none;
   padding: 0.7rem 1.8rem;
   border-radius: 50px;
   cursor: pointer;
   font-weight: 700;
   font-size: 1rem;
-  color: #334155;
   flex: 1;
   margin: 0 0.5rem;
   transition: background 0.3s ease, color 0.3s ease;
 }
 
 button:hover {
-  background: #f48fb1;
+  background: #b3050f;
   color: #fff;
 }
 
@@ -92,7 +92,7 @@ button:hover {
 .result-highlight {
   font-size: 1.4rem;
   margin: 1rem 0;
-  color: #90caf9;
+  color: #E30613;
 }
 
 .result-interpretation {
