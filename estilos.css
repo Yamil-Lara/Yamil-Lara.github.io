@@ -1,129 +1,105 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 body {
-  font-family: 'Montserrat', sans-serif;
-  background: linear-gradient(135deg, #003770, #004e8c);
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  color: #fff;
+    background: linear-gradient(135deg, #003770, #004e8c);
+    font-family: 'Montserrat', sans-serif;
+    color: #FFFFFF;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: block; /* ⚠️ Ya no usamos flex-center en body */
+    overflow-x: hidden;
 }
 
-.calculator {
-  background: rgba(255,255,255,0.15);
-  padding: 2.5rem 3rem;
-  border-radius: 15px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
-  max-width: 420px;
-  width: 100%;
+.container {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 700px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
 }
 
 h1 {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  font-weight: 700;
-  font-size: 1.8rem;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-size: 28px;
+    margin-bottom: 20px;
 }
 
-label {
-  display: block;
-  margin-bottom: 0.3rem;
-  font-weight: 600;
-  color: #e0e0e0;
+label, p {
+    display: block;
+    margin: 10px auto 5px auto;
+    font-size: 16px;
+    width: 100%;
+    color: #FFFFFF;
 }
 
-input[type="number"] {
-  width: 100%;
-  padding: 0.6rem 0.8rem;
-  border-radius: 8px;
-  border: none;
-  font-size: 1rem;
-  margin-bottom: 1.2rem;
-  outline: none;
-  transition: box-shadow 0.3s ease;
+.input-group {
+    margin-bottom: 10px;
 }
 
-input[type="number"]:focus {
-  box-shadow: 0 0 8px #E30613;
+input {
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 16px;
+    width: 80%;
+    border-radius: 5px;
+    border: none;
+    display: block;
 }
 
-.buttons {
-  display: flex;
-  justify-content: space-between;
+.botones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 20px;
 }
 
 button {
-  background: #E30613;
-  color: #FFFFFF;
-  border: none;
-  padding: 0.7rem 1.8rem;
-  border-radius: 50px;
-  cursor: pointer;
-  font-weight: 700;
-  font-size: 1rem;
-  flex: 1;
-  margin: 0 0.5rem;
-  transition: background 0.3s ease, color 0.3s ease;
+    background-color: #E30613;
+    color: #FFFFFF;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    min-width: 140px;
+    border: 2px solid transparent;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 button:hover {
-  background: #b3050f;
-  color: #fff;
+    background-color: #b0020f;
+    color: #FFFFFF;
+    border-color: transparent;
 }
 
-#result {
-  margin-top: 1.8rem;
-  background: rgba(255,255,255,0.2);
-  padding: 1rem 1.2rem;
-  border-radius: 12px;
-  font-size: 1.1rem;
-  text-align: center;
-  font-weight: 600;
-  min-height: 2.2rem;
+textarea {
+    width: 100%;
+    height: 400px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
 }
 
-.result-item {
-  margin-bottom: 0.5rem;
-}
+@media (max-width: 600px) {
+    .botones {
+        flex-direction: column;
+    }
 
-.result-highlight {
-  font-size: 1.4rem;
-  margin: 1rem 0;
-  color: #E30613;
-}
+    button {
+        width: 100%;
+    }
 
-.result-interpretation {
-  font-weight: 700;
-  padding-top: 0.8rem;
-  border-top: 2px solid rgba(255,255,255,0.2);
-}
+    input {
+        width: 100%;
+    }
 
-/* Añadir media queries al final del archivo */
-@media (max-width: 480px) {
-  .calculator {
-    padding: 1.5rem;
-    margin: 1rem;
-  }
-
-  h1 {
-    font-size: 1.4rem;
-  }
-
-  input[type="number"] {
-    padding: 0.5rem;
-    font-size: 0.9rem;
-  }
-
-  button {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-  }
-
-  #result {
-    font-size: 0.95rem;
-    padding: 0.8rem;
-  }
+    textarea {
+        font-size: 13px;
+    }
 }
