@@ -1,36 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Calculadora RBMC</title>
-  <link rel="stylesheet" href="estilos.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relación Beneficio/Costo</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-  <main class="calculator" role="main" aria-labelledby="calc-title">
-    <h1 id="calc-title">Calculadora RBMC</h1>
+<div class="container">
+    <h1>Relación B/C Modificada</h1>
 
-    <form id="rbmc-form" novalidate>
-      <label for="beneficios">Beneficios Totales:</label>
-      <input type="number" id="beneficios" name="beneficios" placeholder="Ej. 100000" step="any" min="0" required />
+    <div class="formula">
+        <p>La fórmula que se usará es:</p>
+        $$P = \frac{A \left[ \frac{1 - (1 + i)^{-n}}{i} \right] + \frac{k}{(1 + i)^n}}{\text{Inversión}}$$
+    </div>
 
-      <label for="costos">Costos Totales:</label>
-      <input type="number" id="costos" name="costos" placeholder="Ej. 50000" step="any" min="0" required />
+    <div id="formulario"></div>
+    <p id="resultado"></p>
+    <p id="conveniencia"></p>
 
-      <label for="ajusteBeneficios">Ajuste en Beneficios:</label>
-      <input type="number" id="ajusteBeneficios" name="ajusteBeneficios" placeholder="Ej. 10000 o -2000" step="any" value="0" />
+    <div class="botones">
+    <button class="calcular" onclick="calcular()">Calcular</button>
+    <button class="pasos" onclick="mostrarpasos()">Pasos</button>
+    </div>
 
-      <label for="ajusteCostos">Ajuste en Costos:</label>
-      <input type="number" id="ajusteCostos" name="ajusteCostos" placeholder="Ej. 5000 o -1500" step="any" value="0" />
+    <div id="pasosContainer" style="display: none;">
+        <h2>Pasos para encontrar la Relación Beneficio/Costo:</h2>
+        <textarea id="pasos" rows="10" cols="50" readonly></textarea>
+    </div>
+</div>
 
-      <div class="buttons">
-        <button type="submit" id="btnCalcular">Calcular</button>
-        <button type="button" id="btnLimpiar">Limpiar</button>
-      </div>
-    </form>
-
-    <div id="result" aria-live="polite" aria-atomic="true"></div>
-  </main>
-  <script src="script.js"></script>
+<script src="script.js"></script>
+<script>
+    window.onload = () => {
+        document.getElementById('formulario').innerHTML = generarFormulario();
+    };
+</script>
 </body>
 </html>
