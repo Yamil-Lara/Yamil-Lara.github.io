@@ -3,238 +3,502 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Relación Beneficio/Costo</title>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-
-        body {
-            background: linear-gradient(135deg, #003770, #004e8c);
-            font-family: 'Montserrat', sans-serif;
-            color: #FFFFFF;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            display: block;
-            overflow-x: hidden;
-        }
-
-        .container {
-            background: rgba(255, 255, 255, 0.15);
-            padding: 40px;
-            border-radius: 10px;
-            max-width: 700px;
-            width: 100%;
-            box-sizing: border-box;
-            margin: 0 auto;
-        }
-
-        h1 {
-            color: #FFFFFF;
-            text-transform: uppercase;
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
-
-        label, p {
-            display: block;
-            margin: 10px auto 5px auto;
-            font-size: 16px;
-            width: 100%;
-            color: #FFFFFF;
-        }
-
-        .input-group {
-            margin-bottom: 10px;
-        }
-
-        input {
-            margin: 10px auto;
-            padding: 10px;
-            font-size: 16px;
-            width: 80%;
-            border-radius: 5px;
-            border: none;
-            display: block;
-        }
-
-        .botones {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 50px;
-            margin-top: 20px;
-        }
-
-        button {
-            background-color: #E30613;
-            color: #FFFFFF;
-            padding: 12px 24px;
-            border-radius: 10px;
-            font-size: 16px;
-            cursor: pointer;
-            min-width: 140px;
-            border: 2px solid transparent;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        button:hover {
-            background-color: #b0020f;
-            color: #FFFFFF;
-            border-color: transparent;
-        }
-
-        textarea {
-            width: 100%;
-            height: 400px;
-            padding: 10px;
-            border-radius: 5px;
-            font-size: 14px;
-            font-family: Arial, sans-serif;
-        }
-
-        @media (max-width: 600px) {
-            .botones {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            button {
-                width: 100%;
-            }
-
-            input {
-                width: 100%;
-            }
-
-            textarea {
-                font-size: 13px;
-            }
-        }
-    </style>
+    <title>Yamil Angelo Lara Balderrama | Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/sections.css">
 </head>
-<body onload="document.getElementById('formulario').innerHTML = generarFormulario();">
-<div class="container">
-    <h1>Relación B/C Modificada</h1>
-
-    <div class="formula">
-        <p>La fórmula que se usará es:</p>
-        $$P = \frac{A \left[ \frac{1 - (1 + i)^{-n}}{i} \right] + \frac{k}{(1 + i)^n}}{\text{Inversión}}$$
-    </div>
-
-    <div id="formulario"></div>
-    <p id="resultado"></p>
-    <p id="conveniencia"></p>
-
-    <div class="botones">
-    <button class="calcular" onclick="calcular()">Calcular</button>
-    <button class="pasos" onclick="mostrarpasos()">Pasos</button>
-    </div>
-
-    <div id="pasosContainer" style="display: none;">
-        <h2>Pasos para encontrar la Relación Beneficio/Costo:</h2>
-        <textarea id="pasos" rows="10" cols="50" readonly></textarea>
-    </div>
-</div>
-
-<script>
-function generarFormulario() {
-    return `
-        <div class="input-group">
-            <label for="mi">Inversión:</label>
-            <input type="number" id="mi" placeholder="Inversión">
+<body>
+    <!-- Background Pattern -->
+    <div class="bg-pattern"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>
+                YL
+                <span class="logo-bracket">/&gt;</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#experiencia">Experiencia</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#stack">Stack</a></li>
+            </ul>
         </div>
-        <div class="input-group">
-            <label for="in">Ingreso Anual:</label>
-            <input type="number" id="in" placeholder="Ingreso Anual">
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <p class="hero-greeting">Hola, soy</p>
+            <h1 class="hero-name">Yamil Angelo<br>Lara Balderrama</h1>
+            <p class="hero-title">Desarrollador Full Stack</p>
+            <p class="hero-description">
+                Apasionado por crear experiencias digitales únicas y soluciones 
+                tecnológicas innovadoras. Me especializo en desarrollo web moderno 
+                y arquitectura de software.
+            </p>
+            <div class="hero-cta">
+                <a href="#proyectos" class="btn btn-primary">Ver Proyectos</a>
+                <a href="#contacto" class="btn btn-secondary">Contacto</a>
+            </div>
+            <div class="hero-social">
+                <a href="#" class="social-link" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </a>
+                <a href="#" class="social-link" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
+                <a href="#" class="social-link" aria-label="Email">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </a>
+            </div>
         </div>
-        <div class="input-group">
-            <label for="costo">Costo Anual:</label>
-            <input type="number" id="costo" placeholder="Costo Anual">
+        <div class="hero-visual">
+            <div class="code-window">
+                <div class="window-header">
+                    <span class="window-dot red"></span>
+                    <span class="window-dot yellow"></span>
+                    <span class="window-dot green"></span>
+                </div>
+                <pre class="code-content"><code><span class="code-keyword">const</span> <span class="code-variable">developer</span> = {
+  <span class="code-property">nombre</span>: <span class="code-string">"Yamil Angelo"</span>,
+  <span class="code-property">apellido</span>: <span class="code-string">"Lara Balderrama"</span>,
+  <span class="code-property">skills</span>: [<span class="code-string">"JavaScript"</span>, <span class="code-string">"React"</span>, <span class="code-string">"Node.js"</span>],
+  <span class="code-property">pasión</span>: <span class="code-string">"Crear soluciones"</span>,
+  <span class="code-method">coding</span>: () => <span class="code-string">"☕ + 💻 = ❤️"</span>
+};</code></pre>
+            </div>
         </div>
-        <div class="input-group">
-            <label for="i">Interés Anual (i):</label>
-            <input type="number" id="i" placeholder="Interés Anual (%)">
+    </header>
+
+    <!-- Experiencia Section -->
+    <section id="experiencia" class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">01.</span>
+                Experiencia
+            </h2>
+            
+            <div class="timeline">
+                <!-- Experiencia 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="experience-header">
+                            <h3 class="experience-role">Desarrollador Full Stack Senior</h3>
+                            <span class="experience-period">2023 - Presente</span>
+                        </div>
+                        <p class="experience-company">
+                            <a href="#">Empresa Tecnológica</a>
+                        </p>
+                        <p class="experience-description">
+                            Desarrollo y mantenimiento de aplicaciones web escalables utilizando 
+                            React, Node.js y PostgreSQL. Liderazgo técnico de un equipo de 5 
+                            desarrolladores, implementando mejores prácticas y metodologías ágiles.
+                        </p>
+                        <div class="experience-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">PostgreSQL</span>
+                            <span class="tag">AWS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experiencia 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="experience-header">
+                            <h3 class="experience-role">Desarrollador Frontend</h3>
+                            <span class="experience-period">2021 - 2023</span>
+                        </div>
+                        <p class="experience-company">
+                            <a href="#">Agencia Digital</a>
+                        </p>
+                        <p class="experience-description">
+                            Creación de interfaces de usuario modernas y responsivas para 
+                            clientes de diversos sectores. Implementación de sistemas de 
+                            diseño y componentes reutilizables.
+                        </p>
+                        <div class="experience-tags">
+                            <span class="tag">Vue.js</span>
+                            <span class="tag">SCSS</span>
+                            <span class="tag">Figma</span>
+                            <span class="tag">Git</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experiencia 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="experience-header">
+                            <h3 class="experience-role">Desarrollador Junior</h3>
+                            <span class="experience-period">2019 - 2021</span>
+                        </div>
+                        <p class="experience-company">
+                            <a href="#">Startup Innovadora</a>
+                        </p>
+                        <p class="experience-description">
+                            Inicio de mi carrera profesional desarrollando aplicaciones web 
+                            y móviles. Aprendizaje constante de nuevas tecnologías y participación 
+                            activa en proyectos desafiantes.
+                        </p>
+                        <div class="experience-tags">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">HTML/CSS</span>
+                            <span class="tag">PHP</span>
+                            <span class="tag">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="input-group">
-            <label for="k">Valor de salvamento (k):</label>
-            <input type="number" id="k" placeholder="Valor residual">
+    </section>
+
+    <!-- Proyectos Section -->
+    <section id="proyectos" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">02.</span>
+                Proyectos
+            </h2>
+            
+            <div class="projects-grid">
+                <!-- Proyecto 1 -->
+                <article class="project-card featured">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <p class="project-overline">Proyecto Destacado</p>
+                        <h3 class="project-title">E-Commerce Platform</h3>
+                        <div class="project-description">
+                            <p>
+                                Plataforma de comercio electrónico completa con carrito de compras, 
+                                pasarela de pagos, panel de administración y sistema de gestión 
+                                de inventario en tiempo real.
+                            </p>
+                        </div>
+                        <ul class="project-tech-list">
+                            <li>React</li>
+                            <li>Node.js</li>
+                            <li>MongoDB</li>
+                            <li>Stripe</li>
+                            <li>Redux</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="#" class="project-link" aria-label="GitHub">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            </a>
+                            <a href="#" class="project-link" aria-label="External Link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Proyecto 2 -->
+                <article class="project-card">
+                    <div class="project-card-inner">
+                        <div class="project-card-header">
+                            <div class="project-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link" aria-label="GitHub">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                </a>
+                                <a href="#" class="project-link" aria-label="External Link">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="project-card-title">Task Manager App</h3>
+                        <p class="project-card-description">
+                            Aplicación de gestión de tareas con funcionalidades de 
+                            drag & drop, categorización, recordatorios y sincronización 
+                            en tiempo real entre dispositivos.
+                        </p>
+                        <ul class="project-tech-list">
+                            <li>Vue.js</li>
+                            <li>Firebase</li>
+                            <li>Vuetify</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Proyecto 3 -->
+                <article class="project-card">
+                    <div class="project-card-inner">
+                        <div class="project-card-header">
+                            <div class="project-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link" aria-label="GitHub">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                </a>
+                                <a href="#" class="project-link" aria-label="External Link">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="project-card-title">Weather Dashboard</h3>
+                        <p class="project-card-description">
+                            Dashboard meteorológico interactivo con visualización de datos, 
+                            pronósticos extendidos y alertas personalizadas basadas en ubicación.
+                        </p>
+                        <ul class="project-tech-list">
+                            <li>React</li>
+                            <li>Chart.js</li>
+                            <li>API REST</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Proyecto 4 -->
+                <article class="project-card">
+                    <div class="project-card-inner">
+                        <div class="project-card-header">
+                            <div class="project-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link" aria-label="GitHub">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="project-card-title">API RESTful</h3>
+                        <p class="project-card-description">
+                            API robusta y bien documentada para gestión de usuarios, 
+                            autenticación JWT, y operaciones CRUD con validación completa.
+                        </p>
+                        <ul class="project-tech-list">
+                            <li>Node.js</li>
+                            <li>Express</li>
+                            <li>JWT</li>
+                            <li>Swagger</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
         </div>
-        <div class="input-group">
-            <label for="n">Cantidad de años (n):</label>
-            <input type="number" id="n" placeholder="Número de períodos">
+    </section>
+
+    <!-- Stack Section -->
+    <section id="stack" class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">03.</span>
+                Stack & Herramientas
+            </h2>
+            
+            <div class="stack-container">
+                <!-- Frontend -->
+                <div class="stack-category">
+                    <h3 class="stack-category-title">
+                        <span class="category-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                        </span>
+                        Frontend
+                    </h3>
+                    <div class="stack-grid">
+                        <div class="stack-item">
+                            <div class="stack-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+                            </div>
+                            <span class="stack-name">HTML5</span>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+                            </div>
+                            <span class="stack-name">CSS3</span>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                            </div>
+                            <span class="stack-name">JavaScript</span>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript">
+                            </div>
+                            <span class="stack-name">TypeScript</span>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+                            </div>
+                            <span class="stack-name">React</span>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js">
+                            </div>
+                            <span class="stack-name">Vue.js</span>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind">
+                            </div>
+                            <span class="stack-name">Tailwind</span>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" alt="SASS">
+                            </div>
+                            <span class="stack-name">SASS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend -->
+                <div class="stack-category">
+                    <h3 class="stack-category-title">
+                        <span class="category-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+                        </span>
+                        Backend
+                    </h3>
+                    <div class="stack-grid">
+                        <div class="stack-item">
+                            <div class="stack-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+                            </div>
+                            <span class="stack-name">Node.js</span>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express">
+                            </div>
+                            <span class="stack-name">Express</span>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                            </div>
+                            <span class="stack-name">Python</span>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">
+                            </div>
+                            <span class="stack-name">PostgreSQL</span>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
+                            </div>
+                            <span class="stack-name">MongoDB</span>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase">
+                            </div>
+                            <span class="stack-name">Firebase</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Herramientas -->
+                <div class="stack-category">
+                    <h3 class="stack-category-title">
+                        <span class="category-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                        </span>
+                        Herramientas
+                    </h3>
+                    <div class="stack-grid">
+                        <div class="stack-item">
+                            <div class="stack-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+                            </div>
+                            <span class="stack-name">Git</span>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+                            </div>
+                            <span class="stack-name">GitHub</span>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+                            </div>
+                            <span class="stack-name">Docker</span>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code">
+                            </div>
+                            <span class="stack-name">VS Code</span>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
+                            </div>
+                            <span class="stack-name">Figma</span>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux">
+                            </div>
+                            <span class="stack-name">Linux</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    `;
-}
+    </section>
 
-function calcular() {
-    const ingreso = parseFloat(document.getElementById("in").value);
-    const costo = parseFloat(document.getElementById("costo").value);
-    const tasa = parseFloat(document.getElementById("i").value);
-    const periodos = parseFloat(document.getElementById("n").value);
-    const salvamento = parseFloat(document.getElementById("k").value);
-    const inversion = parseFloat(document.getElementById("mi").value);
+    <!-- Contact Section -->
+    <section id="contacto" class="section section-contact">
+        <div class="container">
+            <h2 class="section-title centered">
+                <span class="title-number">04.</span>
+                Contacto
+            </h2>
+            <p class="contact-text">
+                ¿Tienes un proyecto en mente o simplemente quieres saludar? 
+                Mi bandeja de entrada siempre está abierta. ¡Hablemos!
+            </p>
+            <a href="mailto:tucorreo@email.com" class="btn btn-primary btn-large">
+                Enviar Mensaje
+            </a>
+        </div>
+    </section>
 
-    const A = ingreso - costo;
-    const parte1 = (1 - Math.pow(1 + tasa, -periodos)) / tasa;
-    let P = A * parte1;
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Diseñado y desarrollado por <strong>Yamil Angelo Lara Balderrama</strong></p>
+            <p class="footer-year">© 2024</p>
+        </div>
+    </footer>
 
-    if (!isNaN(salvamento)) {
-        const parte2 = salvamento / Math.pow(1 + tasa, periodos);
-        P += parte2;
-    }
+    <!-- Scroll to top -->
+    <button class="scroll-top" aria-label="Scroll to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </button>
 
-    const resultado = P / inversion;
-
-    const resultadoElement = document.getElementById("resultado");
-    resultadoElement.innerHTML = `$$P = ${resultado.toFixed(5)}$$`;
-    MathJax.typeset([resultadoElement]);
-
-    const convenienciaElement = document.getElementById("conveniencia");
-    convenienciaElement.textContent = resultado > 1 ? "Es conveniente" : "No es conveniente";
-}
-
-function mostrarpasos() {
-    const pasosContainer = document.getElementById('pasosContainer');
-    pasosContainer.style.display = pasosContainer.style.display === "none" ? "block" : "none";
-
-    const ingreso = parseFloat(document.getElementById("in").value);
-    const costo = parseFloat(document.getElementById("costo").value);
-    const tasa = parseFloat(document.getElementById("i").value);
-    const periodos = parseFloat(document.getElementById("n").value);
-    const salvamento = parseFloat(document.getElementById("k").value);
-    const inversion = parseFloat(document.getElementById("mi").value);
-
-    const A = ingreso - costo;
-    const parte1 = (1 - Math.pow(1 + tasa, -periodos)) / tasa;
-    let parte2 = 0;
-    if (!isNaN(salvamento)) {
-        parte2 = salvamento / Math.pow(1 + tasa, periodos);
-    }
-    let P = A * parte1 + parte2;
-    const resultado = P / inversion;
-
-    const pasos = `
-1. Calcular A (Ingreso Neto):
-   A = ${ingreso} - ${costo} = ${A}
-
-2. Calcular el factor de anualidad:
-   Parte 1 = [1 - (1 + ${tasa})^(-${periodos})] / ${tasa} = ${parte1.toFixed(5)}
-
-3. Calcular valor presente del salvamento:
-   Parte 2 = ${salvamento} / (1 + ${tasa})^${periodos} = ${parte2.toFixed(5)}
-
-4. Calcular P (Beneficio/Costo):
-   P = (${A} * ${parte1.toFixed(5)}) + ${parte2.toFixed(5)} = ${P.toFixed(5)}
-
-5. Dividir entre inversión:
-   Resultado = ${P.toFixed(5)} / ${inversion} = ${resultado.toFixed(5)}
-    `;
-
-    document.getElementById("pasos").value = pasos;
-}
-</script>
+    <script src="js/main.js"></script>
 </body>
 </html>
