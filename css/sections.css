@@ -71,12 +71,12 @@
 .hero-visual .code-window {
     width: 100%;
     max-width: 450px;
-    animation: float 6s ease-in-out infinite;
+    animation: float 4s ease-in-out infinite;
 }
 
 @keyframes float {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+    50% { transform: translateY(-15px); }
 }
 
 /* ===== EXPERIENCIA SECTION ===== */
@@ -400,6 +400,16 @@
     transition: filter var(--transition-fast);
 }
 
+/*Se muestran los fondos de las img de Express y Github*/
+.stack-icon.express{    
+    background-color: #64ffdb11; /*OPCIONAL para que se muestre Express*/
+    border-radius: var(--border-radius-full); /*OPCIONAL*/
+}
+.stack-icon.github{
+    background-color: #64ffdb1d; /*OPCIONAL para que se muestre Github*/
+    border-radius: var(--border-radius-full); /*OPCIONAL*/
+}
+
 .stack-item:hover .stack-icon img {
     filter: grayscale(0%);
 }
@@ -456,6 +466,10 @@
     .hero-content {
         align-items: center;
     }
+
+    .hero-visual .code-window{
+        text-align: justify;
+    }
     
     .hero-description {
         max-width: 100%;
@@ -465,16 +479,17 @@
         justify-content: center;
     }
     
-    .project-card.featured {
-        grid-template-columns: 1fr;
+    .project-card.featured.featured-left, .project-card.featured.featured-right {
+        grid-template-columns: 1fr; /* Una sola columna */
     }
-    
+
     .project-image {
-        min-height: 200px;
+        min-height: 250px; /* Reducir altura un poco */
+        border-bottom: 1px solid var(--border-color);
     }
     
-    .projects-grid {
-        grid-template-columns: 1fr 1fr;
+    .project-content {
+        padding: var(--spacing-lg); /* Ajustar padding */
     }
 }
 
@@ -492,9 +507,9 @@
         font-size: var(--font-size-xl);
     }
     
-    .hero-visual .code-window {
+    /*.hero-visual .code-window {
         display: none;
-    }
+    }*/
     
     .timeline {
         padding-left: var(--spacing-lg);

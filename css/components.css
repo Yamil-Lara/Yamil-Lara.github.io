@@ -291,7 +291,7 @@
         display: none;
     }
     
-    .btn {
+    /*.btn {    REVISIÓN - Botones más grandes
         padding: var(--spacing-sm) var(--spacing-lg);
-    }
+    }*/
 }
