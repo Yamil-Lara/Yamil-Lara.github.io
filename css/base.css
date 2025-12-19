@@ -20,13 +20,72 @@ html {
 
 body {
     font-family: var(--font-primary);
-    font-size: var(--font-size-base);
-    font-weight: var(--font-weight-normal);
-    line-height: var(--line-height-normal);
-    color: var(--color-text-primary);
     background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
     overflow-x: hidden;
-    min-height: 100vh;
+    position: relative;
+}
+
+/* === EFECTOS DE FONDO === */
+
+/* Matrix Rain */
+#canvas-matrix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    opacity: 0.25; /* Sutil para no molestar la lectura */
+}
+
+/* Scanlines (Líneas de TV antigua) */
+.scanlines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0) 50%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2));
+    background-size: 100% 4px;
+    z-index: 9999; /* Por encima de todo */
+    pointer-events: none; /* Permite clicks a través */
+    opacity: 0.4;
+}
+
+/* Three.js Sphere Container */
+#sphere-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none; /* Para que no bloquee el scroll */
+}
+
+/* Tipografía de Títulos con Glitch/Sombra */
+h1, h2, h3 {
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif; /*Tipografía Opcional (Vacío)*/
+    text-shadow: -2px 0 var(--color-accent-primary), 2px 0 var(--color-accent-secondary);
+    text-shadow: /*OPCIONAL*/
+        -2px 0 var(--color-accent-primary), 
+        2px 0 var(--color-accent-secondary);
+    animation: glitch 3s infinite alternate; /*HASTA AQUÍ*/
+}
+
+/* --- ANIMATIONS --- */
+@keyframes glitch {
+    0% { text-shadow: -2px 0 var(--color-accent-primary), 2px 0 var(--color-accent-secondary); }
+    25% { text-shadow: 2px 0 var(--color-accent-primary), -2px 0 var(--color-accent-secondary); }
+    50% { text-shadow: -1px 0 var(--color-accent-tertiary), 1px 0 var(--color-accent-secondary); }
+    100% { text-shadow: -2px 0 var(--color-accent-primary), 2px 0 var(--color-accent-secondary); }
 }
 
 /* ===== Background Pattern ===== */
@@ -156,7 +215,7 @@ input, textarea, select {
 
 /* ===== Section Base ===== */
 .section {
-    padding: var(--spacing-4xl) 0;
+    padding: var(--spacing-2xl) 0;
     position: relative;
 }
 

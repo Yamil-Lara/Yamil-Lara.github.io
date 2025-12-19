@@ -9,12 +9,12 @@
     left: 0;
     right: 0;
     height: var(--navbar-height);
-    background: rgba(10, 10, 15, 0.85);
-    backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border-bottom: var(--border-width) solid var(--border-color);
     z-index: var(--z-fixed);
     transition: all var(--transition-normal);
+    background: rgba(5, 5, 5, 0.7);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .nav-container {
@@ -74,10 +74,46 @@
 
 .nav-links a:hover {
     color: var(--color-accent-primary);
+    text-shadow: 0 0 10px var(--color-accent-primary);
 }
 
 .nav-links a:hover::after {
     width: 100%;
+}
+
+/* === TARJETAS ESTILO CRISTAL (GLASS) === */
+/* Aplica esto a tus tarjetas de proyectos y experiencia */
+.timeline-content, 
+.project-card, 
+.stack-item, 
+.code-window {
+    background: var(--color-bg-card) !important; /* Sobrescribe fondo solido */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto Hover Neon */
+.timeline-content:hover, 
+.project-card:hover, 
+.stack-item:hover {
+    border-color: var(--color-accent-primary);
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
+    transform: translateY(-5px);
+}
+
+/* Borde brillante superior (opcional, estilo cyberpunk) */
+.timeline-content::before,
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-accent-primary), transparent);
+    opacity: 0.5;
 }
 
 /* ===== BOTONES ===== */
@@ -161,7 +197,7 @@
 
 .title-number {
     font-family: var(--font-mono);
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-3xl);
     font-weight: var(--font-weight-normal);
     color: var(--color-accent-primary);
 }
@@ -291,6 +327,10 @@
         display: none;
     }
     
+    .nav-container {
+        justify-content: space-around;
+    }
+
     /*.btn {    REVISIÓN - Botones más grandes
         padding: var(--spacing-sm) var(--spacing-lg);
     }*/

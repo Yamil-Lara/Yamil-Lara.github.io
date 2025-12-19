@@ -219,7 +219,7 @@
 
 .project-overline {
     font-family: var(--font-mono);
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-xl);
     color: var(--color-accent-primary);
     margin-bottom: var(--spacing-sm);
 }
@@ -436,7 +436,7 @@
 }
 
 .footer-content p {
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-base);
     color: var(--color-text-muted);
     margin-bottom: var(--spacing-xs);
 }
@@ -467,6 +467,7 @@
     
     .hero-description {
         max-width: 100%;
+        backdrop-filter: blur(10px);
     }
     
     .hero-cta, .hero-social {
@@ -485,6 +486,10 @@
     .project-content {
         padding: var(--spacing-lg); /* Ajustar padding */
     }
+
+    .contact-text{
+        backdrop-filter: blur(10px);
+    }
 }
 
 @media (max-width: 768px) {
@@ -494,7 +499,7 @@
     }
     
     .hero-name {
-        font-size: var(--font-size-4xl);
+        font-size: var(--font-size-5xl);
     }
     
     .hero-title {
